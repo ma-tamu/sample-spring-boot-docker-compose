@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  mysql:
+    build: ./docker/mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: sample
+      MYSQL_USER: sample
+      MYSQL_PASSWORD: sample
+      MYSQL_ROOT_PASSWORD: sample
+    volumes:
+      - ./docker/mysql/conf.d:/etc/mysql/conf.d
+    ports:
+      - "13306:3306"
